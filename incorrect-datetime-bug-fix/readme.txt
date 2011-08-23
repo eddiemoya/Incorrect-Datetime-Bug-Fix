@@ -98,7 +98,7 @@ No, plugins are not loaded during installation. For alternative solutions see
 "Other manifestations, alternative solutions" on the plugin home page
 
 
-= Will this effect other applications that might run on the same database, and depend on these sql_mode settings?
+= Will this effect other applications that might run on the same database, and depend on these sql_mode settings? =
 
 No, it uses @@SESSION.sql_mode to change the settings for each WordPress session individually.
 
