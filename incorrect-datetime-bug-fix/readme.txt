@@ -19,8 +19,8 @@ This plugin was create to work around a problem that -I have to assume- only occ
 In addition, this problem is often accompanied by an error like the following:
 
 
-`WordPress database error: [Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1]
-INSERT INTO `mg_posts` (`post_author`,`post_date`,`post_date_gmt`,`post_content`,`post_content_filtered`,`post_title`,`post_excerpt`,`post_status`,`post_type`,`comment_status`,`ping_status`,`post_password`,`post_name`,`to_ping`,`pinged`,`post_modified`,`post_modified_gmt`,`post_parent`,`menu_order`,`guid`) VALUES (’1′,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,”,”,’Auto Draft’,”,’auto-draft’,'post’,'closed’,'open’,”,”,”,”,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,’0′,’0′,”)`
+``WordPress database error: [Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1]
+INSERT INTO `mg_posts` (`post_author`,`post_date`,`post_date_gmt`,`post_content`,`post_content_filtered`,`post_title`,`post_excerpt`,`post_status`,`post_type`,`comment_status`,`ping_status`,`post_password`,`post_name`,`to_ping`,`pinged`,`post_modified`,`post_modified_gmt`,`post_parent`,`menu_order`,`guid`) VALUES (’1′,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,”,”,’Auto Draft’,”,’auto-draft’,'post’,'closed’,'open’,”,”,”,”,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,’0′,’0′,”)``
 
 
 The inability to pass zero dates breaks the ability to actually create a new post, but it also seems to have the odd secondary effect of confusing the heck out of nonces (noces are a security feature), probably because they too rely on timestamps.
