@@ -5,7 +5,7 @@ Version: 1.0
 Description: Fixes sql_modes that cause error: "Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1"sage: [Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1]".
 Author: Eddie Moya
 Author URI: http://eddiemoya.com/
-Plugin URI: http://eddiemoya.com/incorrect-datetime-bug-fix-wordpress/
+Plugin URI: http://eddiemoya.com/plugins/incorrect-datetime-bug-fix-wordpress/
 /*
 Copyright (C) 2010 Eddie Moya (eddie.moya+wp@gmail.com)
 
