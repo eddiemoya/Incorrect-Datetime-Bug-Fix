@@ -6,10 +6,10 @@ Requires at least: Lowest version unknown
 Tested up to: 3.2.1
 Stable tag: trunk
 
-Fixes sql_modes that cause error: "Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1"
+Fixes sql_mode values that cause error:Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1
 
 == Description ==
-This plugin was create to work around a problem that -I have to assume- only occurs after a database migration, where certain configurations in MySQL lead to several odd symtoms including but not limited to:
+This plugin was create to work around a problem caused by certain configurations in MySQL that lead to several odd symptoms including but not limited to:
 
 * Loss of ability to create new posts
 * Loss of ability to update posts
@@ -20,7 +20,10 @@ In addition, this problem is often accompanied by an error like the following:
 
 
 <code>WordPress database error: [Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1]
-INSERT INTO 'mg_posts' ('post_author','post_date','post_date_gmt','post_content','post_content_filtered','post_title','post_excerpt','post_status','post_type','comment_status','ping_status','post_password','post_name','to_ping','pinged','post_modified','post_modified_gmt','post_parent','menu_order','guid') VALUES (’1′,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,”,”,’Auto Draft’,”,’auto-draft’,'post’,'closed’,'open’,”,”,”,”,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,’0′,’0′,”)</code>
+INSERT INTO 'mg_posts' ('post_author','post_date','post_date_gmt','post_content','post_content_filtered','post_title',
+'post_excerpt','post_status','post_type','comment_status','ping_status','post_password','post_name','to_ping','pinged',
+'post_modified','post_modified_gmt','post_parent','menu_order','guid') VALUES (’1′,’2011-08-23 03:32:43′,
+’0000-00-00 00:00:00′,”,”,’Auto Draft’,”,’auto-draft’,'post’,'closed’,'open’,”,”,”,”,’2011-08-23 03:32:43′,’0000-00-00 00:00:00′,’0′,’0′,”)</code>
 
 
 The inability to pass zero dates breaks the ability to actually create a new post, but it also seems to have the odd secondary effect of confusing the heck out of nonces (noces are a security feature), probably because they too rely on timestamps.
@@ -106,4 +109,4 @@ No, it uses @@SESSION.sql_mode to change the settings for each WordPress session
 
 Just turn off the plugin - because it uses @@SESSION, the changes wont persist. 
 
-If you've made other modifications explained by me, you will have to run similar SQL commands to apply the old settings.
+If you've made other modifications explained in this plugin's documentation, you will have to run similar SQL commands to apply the old settings.
