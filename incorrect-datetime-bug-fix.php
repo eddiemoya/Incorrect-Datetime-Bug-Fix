@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Incorrect Datetime Bug Fix
-Version: 1.0
+Version: 1.1
 Description: Fixes sql_modes that cause error: "Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1"sage: [Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1]".
 Author: Eddie Moya
 Author URI: http://eddiemoya.com/
@@ -33,8 +33,8 @@ class Incorrect_Datetime_Bug_Fix {
 
         $sql_modes = $wpdb->get_col( "SELECT @@SESSION.sql_mode" );
         $sql_modes = preg_replace( '/(,?NO_ZERO_DATE|,?NO_ZERO_IN_DATE|,?TRADITIONAL)/', '', $sql_modes[0] );
-        $wpdb->query( $wpdb->prepare( "SET SESSION sql_mode = '" . $sql_modes . "'" ) );          
+        $wpdb->query( $wpdb->prepare( "SET SESSION sql_mode = %s", $sql_modes) );     
     }   
-		
+        
 }
 Incorrect_Datetime_Bug_Fix::init();

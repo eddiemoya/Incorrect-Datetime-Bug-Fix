@@ -4,7 +4,7 @@ Donate link: http://eddiemoya.com
 Tags: mysql, sql, sql_mode, no_zero_date, no_zero_in_date, bug, timestamp
 Requires at least: Lowest version unknown
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Fixes sql_mode values that cause error:Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1
 
