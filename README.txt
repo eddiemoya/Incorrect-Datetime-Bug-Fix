@@ -2,7 +2,6 @@
 Contributors: eddiemoya
 Donate link: http://eddiemoya.com
 Tags: mysql, sql, sql_mode, no_zero_date, no_zero_in_date, bug, timestamp
-Requires at least: Lowest version unknown
 Tested up to: 3.2.1
 Stable tag: 1.1
 
@@ -110,3 +109,16 @@ No, it uses @@SESSION.sql_mode to change the settings for each WordPress session
 Just turn off the plugin - because it uses @@SESSION, the changes wont persist. 
 
 If you've made other modifications explained in this plugin's documentation, you will have to run similar SQL commands to apply the old settings.
+
+== Changelog ==
+
+= 1.0 =
+* Initial plugin release
+
+= 1.1 =
+* Bug fix: Corrected the way the plugin used wpdb::prepare().
+
+== Upgrade Notice ==
+
+= 1.1 =
+New version eliminates wpdb::prepare() PHP warnings.
