@@ -24,17 +24,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
 class Incorrect_Datetime_Bug_Fix {
-    function init(){
+    public static function init(){
         add_action('init', array( __CLASS__, 'strip_sql_modes' ) );
     }
-    
-    function strip_sql_modes(){
+
+    public static function strip_sql_modes(){
         global $wpdb;
 
         $sql_modes = $wpdb->get_col( "SELECT @@SESSION.sql_mode" );
         $sql_modes = preg_replace( '/(,?NO_ZERO_DATE|,?NO_ZERO_IN_DATE|,?TRADITIONAL)/', '', $sql_modes[0] );
-        $wpdb->query( $wpdb->prepare( "SET SESSION sql_mode = %s", $sql_modes) );     
-    }   
-        
+        $wpdb->query( $wpdb->prepare( "SET SESSION sql_mode = %s", $sql_modes) );
+    }
+
 }
 Incorrect_Datetime_Bug_Fix::init();
