@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Incorrect Datetime Bug Fix
-Version: 1.1
+Version: 1.2
 Description: Fixes sql_modes that cause error: "Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1"sage: [Incorrect datetime value: '0000-00-00 00:00:00' for column 'post_date_gmt' at row 1]".
 Author: Eddie Moya
 Author URI: http://eddiemoya.com/
